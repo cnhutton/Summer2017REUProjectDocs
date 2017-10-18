@@ -134,6 +134,9 @@
     <Compile Include="Assets\SteamVR\Editor\SteamVR_Update.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\1017_FinalResults.txt" />
+    <None Include="Assets\1017_Results.txt" />
+    <None Include="Assets\1017_Test.txt" />
     <None Include="Assets\12_FinalResults.txt" />
     <None Include="Assets\12_Results.txt" />
     <None Include="Assets\12_Test.txt" />

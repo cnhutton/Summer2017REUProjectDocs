@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class RotationTests : Redirector
 {
-    public GameObject yesButton;
+    public GameObject DifferentButton;
     public GameObject noButton;
 
     public string userID;
@@ -152,7 +152,7 @@ public class RotationTests : Redirector
         //get response from last trial
         string lastLine = Utils.getLastLine("Assets/" + userID + "_Test.txt");
         Utils.writeToFile("Assets/" + userID + "_Results.txt", Convert.ToString(currentGain));
-        response = (lastLine == yesButton.name) ? 1 : -1;
+        response = (lastLine == DifferentButton.name) ? 1 : -1;
 
         //add to the cumulative probability and find new response
         PESTSubroutine();
@@ -223,7 +223,7 @@ public class RotationTests : Redirector
         }
         else
         {
-            newZ = (lastLine == yesButton.name) ? 0.0f : 1.0f;
+            newZ = (lastLine == DifferentButton.name) ? 0.0f : 1.0f;
         }
 
         if (newZ != Zn)
@@ -265,7 +265,7 @@ public class RotationTests : Redirector
         string lastLine = Utils.getLastLine("Assets/" + userID + "_Test.txt");
         Utils.writeToFile("Assets/" + userID + "_Results.txt", Convert.ToString(currentGain));
 
-        Zn = (lastLine == yesButton.name) ? 1.0f : -1.0f;
+        Zn = (lastLine == DifferentButton.name) ? 1.0f : -1.0f;
 
         currentGain -= stepSize * (Zn - confidence) / trialNum;
         ++trialNum;
@@ -291,7 +291,7 @@ public class RotationTests : Redirector
         string lastLine = Utils.getLastLine("Assets/" + userID + "_Test.txt");
         Utils.writeToFile("Assets/" + userID + "_Results.txt", Convert.ToString(currentGain));
 
-        float newZn = (lastLine == yesButton.name) ? 1.0f : -1.0f;
+        float newZn = (lastLine == DifferentButton.name) ? 1.0f : -1.0f;
         if (newZn != Zn)
         {
             ++reversalNum;
